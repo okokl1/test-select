@@ -1,0 +1,105 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Program Selection</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h4 class="mb-3 text-center">ข้อมูลจำนวนที่นั่งแต่ละแผนการเรียน</h4>
+
+  <!-- TOP: Program capacity table -->
+  <div class="table-responsive mb-4">
+    <table id="programTable" class="table table-sm table-bordered align-middle text-center bg-white">
+      <thead class="table-light">
+        <tr>
+          <th>แผนการเรียน</th>
+          <th>รับทั้งหมด</th>
+          <th>เลือกแล้ว</th>
+          <th>ที่นั่งคงเหลือ</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- MIDDLE: Input area -->
+  <h4 class="mb-3 text-center">เลือกแผนการเรียน</h4>
+  <div class="card shadow-sm mb-5 bg-white">
+    <div class="card-body">
+
+      <!-- student id -->
+      <div class="mb-3">
+        <label class="form-label">รหัสนักเรียน (กรณี ม.3 โรงเรียนเดิม หรือ เลขประจำตัวประชาชนกรณีต่างโรงเรียน)</label>
+        <div class="input-group">
+          <input id="studentIdInput" type="text" class="form-control" placeholder="เช่น 66012">
+          <button id="searchBtn" class="btn btn-outline-primary" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- auto‑filled name fields -->
+      <div id="nameGroup" class="row g-2 mb-3 hidden">
+        <div class="col-4">
+          <input id="titleField" class="form-control" readonly>
+        </div>
+        <div class="col-4">
+          <input id="nameField" class="form-control" readonly>
+        </div>
+        <div class="col-4">
+          <input id="surnameField" class="form-control" readonly>
+        </div>
+      </div>
+
+      <!-- program dropdown -->
+      <div id="programGroup" class="mb-3 hidden">
+        <label class="form-label">แผนการเรียน</label>
+        <select id="programSelect" class="form-select"></select>
+      </div>
+
+      <!-- submit button -->
+      <button id="submitBtn" class="btn btn-primary w-100 hidden">ส่งข้อมูล</button>
+
+      <!-- error text -->
+      <div id="errorMsg" class="text-danger fw-bold mt-3"></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM: Submitted data table -->
+  <h4 class="mb-3 text-center">รายการที่เลือกแล้ว</h4>
+  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+    <span>กรองตามแผนการเรียน:</span>
+    <select id="filterProgram" class="form-select form-select-sm" style="width:auto;">
+      <option value="">ทั้งหมด</option>
+    </select>
+  </div>
+
+  <div class="table-responsive">
+    <table id="inputTable" class="table table-sm table-bordered align-middle text-center bg-white">
+      <thead class="table-light">
+        <tr>
+          <th>รหัสนักเรียน</th>
+          <th>คำนำหน้า</th>
+          <th>ชื่อ</th>
+          <th>สกุล</th>
+          <th>แผนการเรียน</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Client Script -->
+  <script src="script.js"></script>
+</body>
+</html>

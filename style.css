@@ -1,0 +1,58 @@
+/* public/style.css */
+
+html {
+    font-size: 200%;
+  }
+  
+  /* =====  SCHOOL COLORS  ===== */
+  :root {
+    --school-blue: #0d6efd;
+    --school-red : #dc3545;
+  }
+  
+  body {
+    background: linear-gradient(135deg, var(--school-blue) 0%, #ffffff 35%, #ffffff 65%, var(--school-red) 100%);
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  h4 {
+    color: var(--school-blue);
+    font-weight: 700;
+  }
+  
+  .card {
+    border: 2px solid var(--school-blue);
+    border-radius: 1rem;
+  }
+  
+  .btn-primary {
+    background: var(--school-blue);
+    border-color: var(--school-blue);
+  }
+  
+  .btn-primary:hover {
+    background: #084298;
+    border-color: #084298;
+  }
+  
+  thead.table-light {
+    background: var(--school-blue) !important;
+    color: #fff;
+  }
+  
+  /* highlight “เลือกแล้ว” column in program table */
+  #programTable td:nth-child(3) {
+    color: var(--school-red);
+    font-weight: 600;
+  }
+  
+  /* responsive tables */
+  .table-responsive {
+    max-height: 65vh;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
